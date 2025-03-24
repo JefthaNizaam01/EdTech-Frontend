@@ -12,7 +12,7 @@ const RegisterPage = () => {
   const navigate = useNavigate();
 
   const handleRegister = async (event) => {
-    event.preventDefault(); // Prevent page reload
+    event.preventDefault(); 
     setErrorMessage('');
 
     try {
@@ -29,7 +29,7 @@ const RegisterPage = () => {
 
       alert('Registration successful! Please login.');
 
-      navigate('/login'); // ✅ Redirect to login page after registration success!
+      navigate('/login'); 
 
     } catch (error) {
       console.error('Registration error:', error.response?.data || error.message);

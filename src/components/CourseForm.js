@@ -9,7 +9,6 @@ function CourseForm({ userToken, onCourseCreated }) {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
-    // Basic validation (optional but recommended)
     if (!CourseName.trim() || !CourseDescription.trim() || !CoursePrice) {
       alert('Please fill in all fields');
       return;
@@ -32,12 +31,11 @@ function CourseForm({ userToken, onCourseCreated }) {
         }
       );
 
-      console.log('Created Course:', res.data); // Optional: Verify response format
+      console.log('Created Course:', res.data); 
 
-      // Call the parent handler to refresh the course list
+ 
       onCourseCreated();
 
-      // Clear form fields
       setCourseName('');
       setCourseDescription('');
       setCoursePrice('');

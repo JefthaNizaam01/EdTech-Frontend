@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Container, Typography, Button, Stack } from '@mui/material'; // Added Stack import
+import { Container, Typography, Button, Stack } from '@mui/material'; 
 import CourseList from '../components/CourseList';
 import CourseForm from '../components/CourseForm';
 import api from '../api/axios';
@@ -43,7 +43,7 @@ function CoursesPage({ userToken, onLogout }) {
         <Button
           variant="contained"
           color="error"
-          onClick={onLogout} // Ensure this function is passed down!
+          onClick={onLogout} 
         >
           Logout
         </Button>

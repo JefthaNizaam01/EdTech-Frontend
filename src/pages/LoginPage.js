@@ -11,14 +11,14 @@ const LoginPage = ({ onLogin }) => {
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
-    event.preventDefault(); // Prevent page reload
-    setErrorMessage('');     // Reset error message
+    event.preventDefault(); 
+    setErrorMessage('');    
 
     try {
       const response = await axios.post(
-        'https://edtech-backend-3.onrender.com/api/auth/local', // Login endpoint
+        'https://edtech-backend-3.onrender.com/api/auth/local', 
         {
-          identifier: email,  // Strapi expects "identifier" instead of email
+          identifier: email,  
           password: password,
         }
       );
@@ -26,11 +26,11 @@ const LoginPage = ({ onLogin }) => {
       const { jwt } = response.data;
 
       if (onLogin) {
-        onLogin(jwt);  // Pass token to parent
+        onLogin(jwt);  
       }
 
       alert('Login successful!');
-      navigate('/courses');  // Redirect to courses page
+      navigate('/courses'); 
 
     } catch (error) {
       console.error('Login error:', error.response?.data || error.message);
